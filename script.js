@@ -17,8 +17,8 @@ function displayGrades() {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td><input type="text" value="${grade.subject}" onchange="updateSubject(${index}, this.value)" /></td>
-            <td><input type="number" value="${grade.grade}" min="0" max="5" step="0.01" onchange="updateGrade(${index}, this.value)" /></td>
-            <td><input type="number" value="${grade.units}" min="1" step="1" onchange="updateUnits(${index}, this.value)" /></td>
+            <td><input type="number" value="${grade.grade}" min="0" max="5" step="0.01" onchange="updateGrade(${index}, this.value)" inputmode="decimal" /></td>
+            <td><input type="number" value="${grade.units}" min="1" step="1" onchange="updateUnits(${index}, this.value)" inputmode="numeric" /></td>
             <td><button onclick="removeSubject(${index})"><i class="fas fa-trash"></i></button></td>
         `;
         gradesBody.appendChild(row);
