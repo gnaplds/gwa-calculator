@@ -131,11 +131,17 @@ button:hover {
 }
 
 /* Footer Styling */
-footer {
-    margin-top: 20px;
-    font-size: 1em; /* Increased font size */
-    color: #555;
-  }
+footer a {
+    color: #61AFEF;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #528FCC;
+}
+
 
 /* Mobile Responsiveness */
 @media screen and (max-width: 600px) {
