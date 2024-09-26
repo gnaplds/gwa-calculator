@@ -38,6 +38,7 @@ function updateUnits(index, value) {
 // Function to add a new subject
 function addSubject() {
     const newSubject = { subject: `Subject ${grades.length + 1}`, grade: 0, units: 3 };
+    document.getElementById('error').innerText = "";
     grades.push(newSubject);
     displayGrades();
 }
@@ -64,6 +65,7 @@ function calculateGwa() {
 
     const gwa = (totalGradePoints / totalUnits).toFixed(2);
     document.getElementById('result').innerText = `Your GWA is: ${gwa}`;
+    document.getElementById('error').innerText = "";
 }
 
 // Event listeners to add functionality to buttons
