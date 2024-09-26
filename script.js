@@ -46,7 +46,7 @@ function updateUnits(index, value) {
 
 // Add a new subject
 function addSubject() {
-    const newSubject = { subject: `Subject ${grades.length + 1}`, grade: 0, units: 3 };
+    const newSubject = { subject: `Subject ${grades.length + 1}`, grade: 0.0, units: 3 };
     document.getElementById('error').innerText = "";
     grades.push(newSubject);
     displayGrades();
@@ -66,21 +66,32 @@ function removeSubject(index) {
 function calculateGwa() {
     let totalGradePoints = 0;
     let totalUnits = 0;
+    let hasBelowTwo = false;
 
     grades.forEach(grade => {
         totalGradePoints += grade.grade * grade.units;
         totalUnits += grade.units;
+
+        if (grade.grade < 2.5) {
+            hasBelowTwo = true;
+        }
     });
 
     const gwa = (totalGradePoints / totalUnits).toFixed(2);
     let resultText = `Your GWA is: ${gwa}`;
 
-    if (gwa >= 3.50 && gwa <= 4.00) {
-        resultText += " - First Dean's Lister!";
-        launchConfetti('gold');
-    } else if (gwa >= 3.25 && gwa < 3.50) {
-        resultText += " - Second Dean's Lister!";
-        launchConfetti('silver');
+    // Check for grades below 2.0
+    if (hasBelowTwo) {
+        resultText += " - You cannot be a Dean's Lister due to having grades below 2.5.";
+    } else {
+        // Dean's Lister checks
+        if (gwa >= 3.50 && gwa <= 4.00) {
+            resultText += " - First Dean's Lister!";
+            launchConfetti('gold');
+        } else if (gwa >= 3.25 && gwa < 3.50) {
+            resultText += " - Second Dean's Lister!";
+            launchConfetti('silver');
+        }
     }
 
     document.getElementById('result').innerText = resultText;
