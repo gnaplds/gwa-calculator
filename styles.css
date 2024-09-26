@@ -32,26 +32,38 @@ h1 {
 /* Table Styles */
 table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 th, td {
-    border: 1px solid #3E4451;
+    border: 1px solid #1E222A;
     padding: 10px;
     text-align: center;
 }
 
 /* Column Widths */
-th:nth-child(1), td:nth-child(1) { width: 40%; } /* Subject */
+th:nth-child(1), td:nth-child(1) { width: 44%; } /* Subject */
 th:nth-child(2), td:nth-child(2) { width: 20%; } /* Grade */
 th:nth-child(3), td:nth-child(3) { width: 20%; } /* Units */
-th:nth-child(4), td:nth-child(4) { width: 20%; text-align: center; } /* Action */
+th:nth-child(4), td:nth-child(4) { width: 16%; text-align: center; } /* Action */
 
 th {
-    background-color: #3E4451;
-    color: #E5C07B;
+    background-color: #3E4451; /* Original background color */
+    color: #E5C07B; /* Text color */
+    padding: 10px 15px; /* Add padding for spacing */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    text-align: center; /* Center align text */
 }
+
+th:hover {
+    background-color: rgba(229, 192, 123, 0.2);
+    cursor: pointer;
+}
+
 
 td {
     background-color: #2C313C;
