@@ -11,6 +11,12 @@ body {
     min-height: 100vh;
 }
 
+/* Light Mode Styles */
+body.light-mode {
+    background-color: #F8F8F2;
+    color: #383A42;
+}
+
 /* Container Styles */
 .container {
     width: 90%;
@@ -23,10 +29,18 @@ body {
     text-align: center;
 }
 
+body.light-mode .container {
+    background-color: #FAFAFA;
+}
+
 /* Heading Styles */
 h1 {
     color: #E06C75;
     margin-bottom: 20px;
+}
+
+body.light-mode h1 {
+    color: #E06C75;
 }
 
 /* Table Styles */
@@ -45,6 +59,10 @@ th, td {
     text-align: center;
 }
 
+body.light-mode th, body.light-mode td {
+    border: 1px solid #FAFAFA;
+}
+
 /* Column Widths */
 th:nth-child(1), td:nth-child(1) { width: 44%; } /* Subject */
 th:nth-child(2), td:nth-child(2) { width: 20%; } /* Grade */
@@ -52,11 +70,16 @@ th:nth-child(3), td:nth-child(3) { width: 20%; } /* Units */
 th:nth-child(4), td:nth-child(4) { width: 16%; text-align: center; } /* Action */
 
 th {
-    background-color: #3E4451; /* Original background color */
-    color: #E5C07B; /* Text color */
-    padding: 10px 15px; /* Add padding for spacing */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
-    text-align: center; /* Center align text */
+    background-color: #3E4451;
+    color: #E5C07B;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-align: center;
+}
+
+body.light-mode th {
+    background-color: #FAFAFA;
+    color: #D19A66;
 }
 
 th:hover {
@@ -64,9 +87,18 @@ th:hover {
     cursor: pointer;
 }
 
+body.light-mode th:hover {
+    background-color: rgba(209, 154, 120, 0.2);
+    cursor: pointer;
+}
 
 td {
     background-color: #2C313C;
+}
+
+body.light-mode td {
+    background-color: #F8F8F2;
+    color: #383A42;
 }
 
 /* Delete Button Styles */
@@ -82,7 +114,18 @@ td button {
     position: relative;
 }
 
+body.light-mode td button {
+    background: none;
+    border: none;
+    color: #E06C75;
+}
+
 td button:hover {
+    background-color: rgba(244, 108, 117, 0.2);
+    transform: scale(1.3);
+}
+
+body.light-mode td button:hover {
     background-color: rgba(244, 108, 117, 0.2);
     transform: scale(1.3);
 }
@@ -101,6 +144,12 @@ input[type="text"], input[type="number"] {
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 14px;
+}
+
+body.light-mode input[type="text"], body.light-mode input[type="number"] {
+    background-color: #FAFAFA;
+    color: #383A42;
+    border: 1px solid #E0E0E0;
 }
 
 input[type="text"]:focus, input[type="number"]:focus {
@@ -134,8 +183,56 @@ button {
     transition: background-color 0.3s ease;
 }
 
+body.light-mode button {
+    background-color: #4CAF50;
+    color: white;
+}
+
 button:hover {
     background-color: #528FCC;
+}
+
+body.light-mode button:hover {
+    background-color: #45A049;
+}
+
+.mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.mode-toggle button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #61AFEF;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+body.light-mode .mode-toggle button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.mode-toggle button:hover {
+    background-color: #528FCC;
+}
+
+body.light-mode .mode-toggle button:hover {
+    background-color: #45A049;
+}
+
+.mode-toggle button i {
+    transition: transform 0.3s ease;
+}
+
+/* Optional: Scale the icon on hover */
+.mode-toggle button:hover i {
+    transform: scale(1.2);
 }
 
 /* Error Message Styles */
@@ -143,6 +240,10 @@ button:hover {
     color: #E06C75;
     margin-top: 10px;
     font-size: 14px;
+}
+
+body.light-mode #error {
+    color: #E06C75;
 }
 
 /* Result Display Styles */
@@ -154,6 +255,10 @@ button:hover {
     text-align: center;
 }
 
+body.light-mode #result {
+    color: #4CAF50;
+}
+
 /* Footer Link Styles */
 footer a {
     color: #61AFEF;
@@ -162,8 +267,16 @@ footer a {
     transition: color 0.3s ease;
 }
 
+body.light-mode footer a {
+    color: #4CAF50;
+}
+
 footer a:hover {
     color: #528FCC;
+}
+
+body.light-mode footer a:hover {
+    color: #45A049;
 }
 
 /* Responsive Styles */
@@ -172,22 +285,22 @@ footer a:hover {
         width: 95%;
         padding: 15px;
     }
-   
+
     table {
         font-size: 14px;
     }
-   
+
     th, td {
         padding: 8px;
     }
-   
+
     button {
         width: 80%;
         margin-bottom: 10px;
         padding: 12px;
         font-size: 16px;
     }
-   
+
     input[type="text"], input[type="number"] {
         padding: 10px;
         font-size: 16px;

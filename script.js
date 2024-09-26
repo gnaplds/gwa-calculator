@@ -93,7 +93,8 @@ function calculateGwa() {
             launchConfetti('silver');
         }
     }
-
+    
+    document.getElementById('error').innerText = "";
     document.getElementById('result').innerText = resultText;
 }
 
@@ -108,7 +109,23 @@ function launchConfetti(color) {
     confetti(confettiSettings);
 }
 
+// Function to toggle between light and dark mode
+function toggleMode() {
+    const body = document.body;
+    const button = document.getElementById('toggleModeBtn');
+    const icon = document.getElementById('modeIcon');
+    body.classList.toggle('light-mode');
+    if (body.classList.contains('light-mode')) {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+    } else {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+    }
+}
+
 // Add event listeners
+document.getElementById('toggleModeBtn').addEventListener('click', toggleMode);
 document.getElementById('addSubjectBtn').addEventListener('click', addSubject);
 document.getElementById('calculateGwaBtn').addEventListener('click', calculateGwa);
 
