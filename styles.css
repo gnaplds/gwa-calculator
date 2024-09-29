@@ -53,60 +53,6 @@ body.light-mode h1 {
     color: #e45649;
 }
 
-/* Button Styles */
-button {
-    padding: 10px 20px;
-    cursor: pointer;
-    border: none;
-    border-radius: 4px;
-    margin: 5px;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
-}
-
-body button {
-    background-color: #56b6c2;
-    color: white;
-}
-
-body.light-mode button {
-    background-color: #0184bc;
-    color: white;
-}
-
-button:hover {
-    background-color: hsl(187, 47.0%, 44.9%);
-}
-
-body.light-mode button:hover {
-    background-color: hsl(198, 99%, 27%);
-}
-
-button[id="calculateGwaBtn"] {
-    width: 30%;
-}
-
-/* Mode Toggle Styles */
-.mode-toggle {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-}
-
-.mode-toggle button {
-    padding: 10px;
-    border-radius: 10px;
-}
-
-.mode-toggle button i {
-    transition: transform 0.3s ease;
-}
-
-.mode-toggle button:hover i {
-    transform: scale(1.2);
-}
-
 /* Table Styles */
 table {
     width: 100%;
@@ -189,10 +135,12 @@ td button {
 }
 
 body td button {
+    background-color: rgba(244, 108, 117, 0.1);
     color: #E06C75;
 }
 
 body.light-mode td button {
+    background-color: rgba(248, 86, 73, 0.1);
     color: #e45649;
 }
 
@@ -201,11 +149,11 @@ td button:hover {
 }
 
 body td button:hover {
-    background-color: rgba(244, 108, 117, 0.2);
+    background-color: rgba(244, 108, 117, 0.3);
 }
 
 body.light-mode td button:hover {
-    background-color: rgba(248, 86, 73, 0.2);
+    background-color: rgba(248, 86, 73, 0.3);
 }
 
 td button i {
@@ -257,6 +205,60 @@ input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     appearance: none;
     margin: 0; 
+}
+
+/* Button Styles */
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    margin: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+body button:not(td button) {
+    background-color: #56b6c2;
+    color: white;
+}
+
+body.light-mode button:not(td button) {
+    background-color: #0184bc;
+    color: white;
+}
+
+button:hover {
+    background-color: hsl(187, 47.0%, 44.9%);
+}
+
+body.light-mode button:hover {
+    background-color: hsl(198, 99%, 27%);
+}
+
+button[id="calculateGwaBtn"] {
+    width: 30%;
+}
+
+/* Mode Toggle Styles */
+.mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.mode-toggle button {
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.mode-toggle button i {
+    transition: transform 0.3s ease;
+}
+
+.mode-toggle button:hover i {
+    transform: scale(1.2);
 }
 
 /* Error Message Styles */
